@@ -1,0 +1,12 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Nova LAN server runtime data (persisted match/tournament store)
+server/data/
+
+# Logs / OS
+*.log
+.DS_Store

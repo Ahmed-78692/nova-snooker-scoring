@@ -1,0 +1,24 @@
+# Render deployment config for the Nova Snooker Scoring App.
+#
+# This runs the Node server (server/server.mjs), which serves the built
+# front-end AND provides the WebSocket relay used for live cross-device
+# scoring. Render's free web service supports long-running Node + WebSockets.
+#
+# How Render uses this:
+#   - buildCommand: installs deps and builds the front-end into dist/
+#   - startCommand: starts the server; it binds to the PORT env var Render sets
+#
+# Note: the free tier sleeps after ~15 min idle and has an ephemeral disk
+# (server/data/store.json resets on restart). Fine for basic/casual use.
+
+services:
+  - type: web
+    name: nova-snooker-scoring
+    runtime: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    autoDeploy: true
+    envVars:
+      - key: NODE_VERSION
+        value: "20"
