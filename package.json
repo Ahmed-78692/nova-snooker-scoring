@@ -11,7 +11,9 @@
     "dev": "vite",
     "server": "node server/server.mjs",
     "start": "node server/server.mjs",
-    "offline": "npm run build && node server/server.mjs"
+    "offline": "npm run build && node server/server.mjs",
+    "launch": "node server/launch.cjs",
+    "package:exe": "npm run build && pkg server/launch.cjs --config pkg.config.json --targets node22-win-x64 --output release/NovaScoring.exe"
   },
   "dependencies": {
     "express": "4.21.2",
@@ -76,6 +78,7 @@
   "devDependencies": {
     "@tailwindcss/vite": "4.1.12",
     "@vitejs/plugin-react": "4.7.0",
+    "@yao-pkg/pkg": "6.9.0",
     "tailwindcss": "4.1.12",
     "vite": "6.3.5"
   },

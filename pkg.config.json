@@ -1,0 +1,10 @@
+{
+  "pkg": {
+    "assets": [
+      "dist/**/*"
+    ],
+    "scripts": [
+      "server/launch.cjs"
+    ]
+  }
+}

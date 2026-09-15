@@ -6,6 +6,11 @@ dist/
 
 # Nova LAN server runtime data (persisted match/tournament store)
 server/data/
+nova-data/
+
+# Packaged Windows executable output (built with npm run package:exe)
+release/
+pkg-build.log
 
 # Logs / OS
 *.log
